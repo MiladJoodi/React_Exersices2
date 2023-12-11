@@ -1,8 +1,6 @@
-## Project 2
-Predict Age
-   - axios
+## Project 1
+Crud
    - useState
-   - useEffect
    
 ### Cover:
 ![](https://s30.picofile.com/file/8470389792/predict.JPG)
