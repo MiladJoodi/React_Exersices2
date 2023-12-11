@@ -7,7 +7,7 @@
   outline: none;
 }
 body {
-  direction: rtl;
+  /* direction: rtl; */
   font-family: 'vazir' !important;
 }
 
