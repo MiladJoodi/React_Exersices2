@@ -5,6 +5,6 @@ Predict Age
    - useEffect
    
 ### Cover:
-![](https://s30.picofile.com/file/8470387518/crud.jpg)
+![](https://s30.picofile.com/file/8470389792/predict.JPG)
 
 My Linkedin: [Linkedin.com/in/MiladJoodi](https://www.linkedin.com/in/MiladJoodi/)  
