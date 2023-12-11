@@ -1,7 +1,7 @@
 ## Project 1
-Show/hide password input 
+Crud
    
 ### Cover:
-![](https://s30.picofile.com/file/8469825892/show_hide.gif)
+![](https://s30.picofile.com/file/8470387518/crud.jpg)
 
 My Linkedin: [Linkedin.com/in/MiladJoodi](https://www.linkedin.com/in/MiladJoodi/)  
