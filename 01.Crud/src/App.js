@@ -40,8 +40,8 @@ function App() {
   return (
     <div className="App">
       <div className="add-course">
-        <input type="text" onChange={inputHanler} />
         <button onClick={addCourse}>Add Course</button>
+        <input type="text" onChange={inputHanler} />
       </div>
 
       <div className="list">
