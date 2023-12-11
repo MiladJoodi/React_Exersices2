@@ -1,6 +1,9 @@
 ## Project 4
-Generate an excuse
-   -axios
+Generate Excuse
+   - axios
+   - useState
+   - useEffect
+   
    
 ### Cover:
 ![](https://s31.picofile.com/file/8470390084/excuse.JPG)
