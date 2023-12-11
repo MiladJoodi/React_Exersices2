@@ -1,7 +1,6 @@
 ## Project 4
 Generate an excuse
    -axios
-   -UseState
    
 ### Cover:
 ![](https://s31.picofile.com/file/8470390084/excuse.JPG)
