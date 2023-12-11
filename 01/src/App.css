@@ -1,0 +1,33 @@
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffe3f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-fields {
+    width: 330px;
+    height: 55px;
+    background-color: #fff;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 5px 15px #fdd6f1;
+    padding: 15px;
+}
+.input-fields input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: hidden;
+    font-size: 18px;
+    padding: 5px;
+    display: inline;
+    direction: ltr;
+}
+.input-fields span{
+    cursor: pointer;
+}
