@@ -5,12 +5,12 @@ import {yupResolver} from '@hookform/resolvers/yup'
 const SubmitForm = () => {
 
     const schema = yup.object().shape({
-      name: yup.string().required(),
-      email: yup.string().required(),
+      name: yup.string().required("نام را وارد کنید"),
+      email: yup.string().email("ایمیل نامعتبر است").required("ایمیل اجباری است"),
       age: yup.number().positive().min(18).max(100).required(),
       // password: yup.string().min(4).max(15).required(), //Regex
       password: yup.string().min(4).max(15).matches(/[a-z]+/).matches(/[A-Z]+/).matches(/\d+/), //Regex
-      confirmPassword: yup.string().oneOf([yup.ref("password")]).required()
+      confirmPassword: yup.string().oneOf([yup.ref("password")], "پسورد یکسان نیست").required()
     })
 
     const {register, handleSubmit, formState: {errors}} = useForm({resolver: yupResolver(schema)})
