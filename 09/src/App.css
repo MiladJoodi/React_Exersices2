@@ -1,0 +1,66 @@
+.App {
+    margin: 0 auto;
+    margin-top: 100px;
+    gap: 10px;
+    /* height: 100vh; */
+    text-align: center;
+}
+
+.add-course {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-course input {
+    padding: 3px;
+}
+
+.add-course button {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px !important;
+    background-color: bisque;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.courseList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgb(221, 221, 221);
+    width: 250px;
+    padding: 5px  15px;
+    border-radius: 5px;
+}
+.courseList-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.courseList button {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-color: red;
+    font-size: 22px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+.courseList button:nth-child(2){
+    font-size: 18px;
+    background-color: green;
+}

@@ -8,17 +8,21 @@ import Nav from "./Pages/Nav";
 import Profile from "./Pages/Profile";
 import Footer from "./Footer";
 import Error from "./Pages/Error";
+import {QueryClient, QueryClientProvider} from 'react-query'
 
-export const ProfileContext = createContext(); 
 
 function App() {
+
+  const client = new QueryClient({defaultOptions: {
+    queries: {refetchOnWindowFocus: false},
+  }})
+
   const [username,setUsername] = useState("Joodi")
 
-  const value = {username, setUsername}
   
   return (
     <div className="App">
-    <ProfileContext.Provider value={value}>
+      <QueryClientProvider client={client}>
       <Router>
         <div>SarvinStyle</div>
         <Nav />
@@ -31,7 +35,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
-      </ProfileContext.Provider>
+      </QueryClientProvider>
     </div>
   );
 }
