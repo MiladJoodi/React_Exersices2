@@ -1,30 +1,31 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Axios from "axios";
-import axios from "axios";
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Nav from "./Pages/Nav";
+import Profile from "./Pages/Profile";
+import Footer from "./Footer";
+import Error from "./Pages/Error";
 
 function App() {
-  const [generateExcuse, setGenerateExcuse] = useState("")
-
-  const fetchExcuse = (excuse)=>{
-    axios.get(`https://excuser-three.vercel.app/v1/excuse/${excuse}`)
-    .then(res=>{
-      // console.log(res.data[0].excuse);
-      setGenerateExcuse(res.data[0])
-    })
-  }
 
   
   return (
     <div className="App">
-      <h1>Generate an excuse</h1>
-
-      <div class="btn-group" role="group">
-         <button onClick={()=>fetchExcuse("party")} type="button" class="btn btn-outline-primary">Party</button>
-        <button onClick={()=>fetchExcuse("family")} type="button" class="btn btn-outline-primary">Family</button>
-        <button onClick={()=>fetchExcuse("office")} type="button" class="btn btn-outline-primary">Office</button>
-      </div>
-        <p>{generateExcuse.excuse}</p>
+      <Router>
+        <div>SarvinStyle</div>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/profile/:name/:id" element={<Profile />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 }
