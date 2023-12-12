@@ -1,59 +1,37 @@
-import { useState } from "react";
+import { useState, createContext} from "react";
 import "./App.css";
-import Course from "./Course";
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Nav from "./Pages/Nav";
+import Profile from "./Pages/Profile";
+import Footer from "./Footer";
+import Error from "./Pages/Error";
+
+export const ProfileContext = createContext(); 
 
 function App() {
-  const [courseList, setCourseList] = useState([]);
-  const [newCourse, setNewCourse] = useState("");
+  const [username,setUsername] = useState("Joodi")
 
-  const inputHanler = (event) => {
-    setNewCourse(event.target.value);
-  };
-
-
-  const addCourse = () => {
-    const course = {
-      id: courseList.length === 0 ? 1 : courseList.length+1,
-      courseName: newCourse,
-      isCompleted: false
-    }
-    setCourseList([...courseList, course]);
-    // console.log(course);
-  };
-
-  const deleteCourse = (courseId)=>{
-    setCourseList(courseList.filter((course)=> courseId !== course.id)
-    )
-  }
-
-  const confirmCourse = (courseId)=>{
-    const newCourseList = courseList.map((course)=>{
-      if(course.id === courseId) return {...course, isCompleted: !course.isCompleted}
-      else
-      return course
-    })
-    setCourseList(newCourseList)
-  }
-
-  console.log(courseList)
-
+  const value = {username, setUsername}
+  
   return (
     <div className="App">
-      <div className="add-course">
-        <button onClick={addCourse}>Add Course</button>
-        <input type="text" onChange={inputHanler} />
-      </div>
-
-      <div className="list">
-        {courseList.map((course, index) => {
-          return  <Course
-          key={index}
-          course={course}
-          deleteCourse={deleteCourse}
-          confirmCourse={confirmCourse} 
-          />
-        })}
-      </div>
+    <ProfileContext.Provider value={value}>
+      <Router>
+        <div>SarvinStyle</div>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+        <Footer />
+      </Router>
+      </ProfileContext.Provider>
     </div>
   );
 }
