@@ -1,5 +1,5 @@
-## Project 6
-Use Context exercise
+## Project 7
+useQuery exercise
    
 
 My Linkedin: [Linkedin.com/in/MiladJoodi](https://www.linkedin.com/in/MiladJoodi/)  
