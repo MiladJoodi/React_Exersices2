@@ -10,16 +10,17 @@ export const Form = () => {
   //   tags: [],
   //   quantity: 0,
   // });
-  const tagRef = useRef()
-  const [state, dispatch] = useReducer(formReducer,initialState)
 
-  const handelInputChange = (event) => {
-    dispatch({type: "change_Input",data: {name: event.target.name , value: event.target.value}})
-  };
+  const tagRef = useRef()
+  const [state, dispatch] = useReducer(formReducer, initialState)
+
+  const handelInputChange = (event)=>{
+    dispatch({type: "change_Input", data: {name: event.target.name, value: event.target.value}})
+  }
 
   const handelTags = ()=>{
     const tags = tagRef.current.value.split(",")
-    tags.forEach(tag=>{
+    tags.forEach(tag=> {
       dispatch({type: "add_tag", data: tag})
     })
   }
@@ -66,7 +67,7 @@ export const Form = () => {
             {tag}</button>;
         })}
         <div style={{ marginTop: "20px" }}>
-          <button type="button" onClick={() => dispatch({ type: "increase" })}>
+          <button type="button" onClick={()=> dispatch({type: "increase"})}>
             +
           </button>
           تعداد {state.quantity}
