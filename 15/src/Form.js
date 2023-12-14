@@ -10,16 +10,23 @@ export const Form = () => {
   //   tags: [],
   //   quantity: 0,
   // });
-  const tagRef = useRef();
+  const tagRef = useRef()
   const [state, dispatch] = useReducer(formReducer,initialState)
 
   const handelInputChange = (event) => {
     dispatch({type: "change_Input",data: {name: event.target.name , value: event.target.value}})
   };
 
+  const handelTags = ()=>{
+    const tags = tagRef.current.value.split(",")
+    tags.forEach(tag=>{
+      dispatch({type: "add_tag", data: tag})
+    })
+  }
+
   console.log(state)
 
-
+  
 
   
   return (
@@ -52,7 +59,7 @@ export const Form = () => {
         <p>تگ</p>
         <textarea placeholder="tags" ref={tagRef}></textarea>
         <br />
-        <button type="button">انتخاب تگ</button>
+        <button type="button" onClick={handelTags}>انتخاب تگ</button>
         <br/>
         {state.tags.map((tag) => {
           return <button key={tag} onClick={()=> dispatch({type :"remove_tag" , data : tag })}>
