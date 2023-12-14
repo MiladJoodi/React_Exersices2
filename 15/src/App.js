@@ -4,8 +4,8 @@ import { Form } from "./Form";
 function App() {
 
   return( <div className="App">
-    <Fact />
-    {/* <Form /> */}
+    {/* <Fact /> */}
+    <Form />
   </div>);
 }
 export default App;
