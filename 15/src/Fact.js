@@ -4,9 +4,9 @@ import { factReducer, initialState } from "./factReducer"
 import { ACTION_TYPES } from "./factAction"
 
 export const Fact=()=>{
-    const [loading, setLoading] =useState(false)
-    const [fact, setFact] =useState("")
-    const [error, setError] =useState(false)
+    // const [loading, setLoading] =useState(false)
+    // const [fact, setFact] =useState("")
+    // const [error, setError] =useState(false)
 
  // Fetch_start   : loading :true
  // fetch_success : loading: false
@@ -15,10 +15,10 @@ export const Fact=()=>{
  // fetch_error   : loading: false
  //               : error  : true
 
- const [state , dispatch] = useReducer(factReducer , initialState)
+ const [state , dispatch] = useReducer(factReducer, initialState)
 
     const handleFetch =() => {
-        dispatch({type: ACTION_TYPES.Fetch_start})
+        dispatch({type: ACTION_TYPES.fetch_start})
         Axios.get("https://catfact.ninja/fact")
         .then((res)=>{
             dispatch({type: ACTION_TYPES.fetch_success, data: res.data.fact})
