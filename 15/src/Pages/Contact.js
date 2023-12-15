@@ -1,9 +1,9 @@
 import React from 'react'
+import {useSelector} from "react-redux"
 
-function Contact() {
+export function Contact() {
+  const selector = useSelector((state)=> state.user)
   return (
-    <div>Contact</div>
+    <div>Contact {selector.username}</div>
   )
 }
-
-export default Contact
