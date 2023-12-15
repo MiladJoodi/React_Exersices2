@@ -1,18 +1,14 @@
-import React from 'react'
-import { Person } from './Person'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+
+
   return (
-    <div>
-      <Person
-      name={2}
-      email={"test@gmail.com"}
-      age= {43}
-      isMarried= {true}
-      courses={["react", "mysql","python"]}
-      />
+    <div className="App">
+      <button className="btn btn-success">Submit</button>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

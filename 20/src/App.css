@@ -1,38 +1,66 @@
 .App {
-  text-align: center;
+    margin: 0 auto;
+    margin-top: 100px;
+    gap: 10px;
+    /* height: 100vh; */
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.add-course {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add-course input {
+    padding: 3px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.add-course button {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px !important;
+    background-color: bisque;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    flex-direction: column;
+    gap: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.courseList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgb(221, 221, 221);
+    width: 250px;
+    padding: 5px  15px;
+    border-radius: 5px;
+}
+.courseList-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.courseList button {
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-color: red;
+    font-size: 22px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+.courseList button:nth-child(2){
+    font-size: 18px;
+    background-color: green;
 }
