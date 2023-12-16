@@ -1,0 +1,11 @@
+.cart-items-count{
+    padding-left: 9px;
+    padding-right: 9px;
+    border-radius: 9px;
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: 0px;
+}
