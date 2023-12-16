@@ -7,7 +7,7 @@ export function Shop() {
     <>
     <h1>Shop</h1>
     <div className='row'>
-        {PRODUCTS.map((productData)=> <Product data={productData} />
+        {PRODUCTS.map((productData)=> <Product key={productData.id} data={productData} />
         )}
     </div>
     </>
