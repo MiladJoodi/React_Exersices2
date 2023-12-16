@@ -5,7 +5,7 @@ import { ShopContext } from "../../context/shopContext";
 export default function Product(props) {
   const { id, productName, productImage, price } = props.data;
 
-    const {cartItems, addToCart, removeFromCart} = useContext(ShopContext)
+  const {cartItems, addToCart, removeFromCart} = useContext(ShopContext)
 
   return (
     <div className="col-3">
