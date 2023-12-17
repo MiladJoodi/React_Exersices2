@@ -1,9 +1,19 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const ShopContext = createContext(null);
 
 export const ShopContextProvider = (props)=>{
     const [cartItems, setCartItems] = useState([])
+
+    useEffect(()=>{
+        const data = localStorage.getItem("ProductsCart")
+        setCartItems(JSON.parse(data) ? JSON.parse(data) : [])
+    },[])
+
+    useEffect(()=>{
+        if(cartItems !== undefined)
+        localStorage.setItem("ProductsCart", JSON.stringify(cartItems))
+    },[cartItems])
 
     const addToCart = (itemId)=>{
         if(!cartItems?.find((item)=> item.id === itemId))
@@ -25,7 +35,13 @@ export const ShopContextProvider = (props)=>{
         }))
     }
 
-    const contextValue = {cartItems, addToCart, removeFromCart}
+    const resetCart = ()=>{
+        setCartItems();
+        // localStorage.removeItem("ProductsCart")
+        localStorage.clear()
+    }
+
+    const contextValue = {cartItems, addToCart, removeFromCart, resetCart}
         return <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>
     
 }

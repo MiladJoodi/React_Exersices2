@@ -5,18 +5,19 @@ import Product from "../shop/Product";
 
 function Cart() {
 
-  const {cartItems} = useContext(ShopContext)
+  const {cartItems, resetCart} = useContext(ShopContext)
 
   return (
     <React.Fragment>
       <div>Your cart items</div>
       <div className="row">
         {PRODUCTS.map((product)=> {
-            if(cartItems.some((item)=> item.id === product.id && item.count > 0)){
+            if(cartItems?.some((item)=> item.id === product.id && item.count > 0)){
               return <Product data={product}  />
             }
         })}
       </div>
+      <button className="btn btn-warning m-3" onClick={resetCart}>Reset</button>
     </React.Fragment>
   );
 }
