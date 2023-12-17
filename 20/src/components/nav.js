@@ -6,7 +6,7 @@ import { ShopContext } from '../context/shopContext'
 
 export function Nav() {
 
-  const {cartItems} = useContext(ShopContext)
+  // const {cartItems} = useContext(ShopContext)
 
 
   return (
@@ -19,8 +19,8 @@ export function Nav() {
           </li>
           <li className='nav-item'>
             <Link to="/cart" className='nav-link'>
-              <FontAwesomeIcon icon={faShoppingCart} />
-              <span className='cart-items-count'>{cartItems.length}</span>
+              {/* <FontAwesomeIcon icon={faShoppingCart} /> */}
+              {/* <span className='cart-items-count'>{cartItems.length}</span> */}
             </Link>
           </li>
         </ul>
