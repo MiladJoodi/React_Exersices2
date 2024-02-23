@@ -28,6 +28,7 @@ export const ShopContextProvider = (props)=>{
         }))
     }
     const removeFromCart = (itemId)=>{
+        
         setCartItems(cartItems.map((item)=>{
             if(item.id === itemId)
                 return {...item, count: item.count === 0 ? 0 :  item.count-1}
